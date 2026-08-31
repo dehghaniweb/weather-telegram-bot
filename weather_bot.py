@@ -36,13 +36,10 @@ WEATHER_CODES = {
 
 
 def load_cities():
-
     cities = []
 
     with open(CITIES_FILE, "r", encoding="utf-8") as f:
-
         for line in f:
-
             line = line.strip()
 
             if not line or line.startswith("#"):
@@ -55,7 +52,6 @@ def load_cities():
                 continue
 
             try:
-
                 name = parts[0].strip()
                 latitude = float(parts[1])
                 longitude = float(parts[2])
@@ -67,7 +63,6 @@ def load_cities():
                 })
 
             except ValueError:
-
                 print(f"مختصات نامعتبر: {line}")
 
     return cities
@@ -93,7 +88,6 @@ def get_weather(city):
     )
 
     with urllib.request.urlopen(request, timeout=30) as response:
-
         data = json.loads(
             response.read().decode("utf-8")
         )
@@ -126,17 +120,14 @@ def load_state():
         return {}
 
     try:
-
         with open(
             STATE_FILE,
             "r",
             encoding="utf-8"
         ) as f:
-
             return json.load(f)
 
     except Exception:
-
         return {}
 
 
@@ -206,7 +197,6 @@ def send_telegram(message):
         )
 
     if not result.get("ok"):
-
         raise RuntimeError(
             f"Telegram error: {result}"
         )
@@ -258,17 +248,14 @@ def main():
     cities = load_cities()
 
     if not cities:
-
         print(
             "هیچ شهری در cities.txt پیدا نشد."
         )
-
         return
 
     old_state = load_state()
 
     weather_results = []
-
     new_state = {}
 
     for city in cities:
@@ -307,7 +294,14 @@ def main():
                 "error": str(e)
             })
 
-    if new_state == old_state:
+    # اگر از طریق دکمه تلگرام اجرا شده باشد،
+    # همیشه گزارش را ارسال کن.
+    manual_request = os.environ.get(
+        "MANUAL_REQUEST",
+        "false"
+    ).lower() == "true"
+
+    if not manual_request and new_state == old_state:
 
         print(
             "هیچ تغییری در وضعیت هوا "
