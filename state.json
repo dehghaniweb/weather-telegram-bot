@@ -1,1 +1,22 @@
-{}
+{
+  "شیراز": {
+    "temperature": 30.5,
+    "weather_code": 0
+  },
+  "خرمشهر": {
+    "temperature": 33.2,
+    "weather_code": 2
+  },
+  "سیاه بیشه": {
+    "temperature": 27.2,
+    "weather_code": 1
+  },
+  "سعادت شهر": {
+    "temperature": 27.6,
+    "weather_code": 0
+  },
+  "بروکسل": {
+    "temperature": 17.1,
+    "weather_code": 3
+  }
+}
