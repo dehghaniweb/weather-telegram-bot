@@ -1,42 +1,42 @@
 {
   "کازرون": {
-    "temperature": 29.4,
+    "temperature": 27.4,
     "weather_code": 0
   },
   "شیراز": {
-    "temperature": 25.9,
+    "temperature": 22.3,
     "weather_code": 0
   },
   "زانوس مازندران": {
     "temperature": 12.9,
-    "weather_code": 45
+    "weather_code": 0
   },
   "خرمشهر": {
-    "temperature": 34.8,
+    "temperature": 30.9,
     "weather_code": 0
   },
   "سیاه بیشه": {
-    "temperature": 11.6,
-    "weather_code": 45
+    "temperature": 11.5,
+    "weather_code": 2
   },
   "سعادت شهر": {
-    "temperature": 23.1,
+    "temperature": 18.9,
     "weather_code": 0
   },
   "قلات شیراز": {
-    "temperature": 22.4,
+    "temperature": 21.2,
     "weather_code": 0
   },
   "آیندهوون": {
-    "temperature": 15.9,
-    "weather_code": 1
+    "temperature": 13.6,
+    "weather_code": 0
   },
   "روتردام": {
-    "temperature": 17.0,
-    "weather_code": 3
+    "temperature": 16.2,
+    "weather_code": 2
   },
   "بروکسل": {
-    "temperature": 16.6,
-    "weather_code": 2
+    "temperature": 15.8,
+    "weather_code": 3
   }
 }
